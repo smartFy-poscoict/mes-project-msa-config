@@ -3,12 +3,12 @@
 #
 mybatis:
    config-location: classpath:mybatis/configuration.xml
-   
+
 spring:
    devtools:
       livereload:
          enabled: true
-      datasource:
+   datasource:
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://34.64.199.56:5432/poscoict?characterEncoding=UTF-8&serverTimezone=UTC
       username: poscoict
