@@ -1,0 +1,10 @@
+#
+# default configuration
+#
+server:
+   port: 0
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
