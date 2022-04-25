@@ -1,14 +1,16 @@
 #
 # production configuration
 #
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+   
 spring:
     datasource:
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://34.64.199.56:5432/poscoict?characterEncoding=UTF-8&serverTimezone=UTC
       username: poscoict
       password: 1234
-mybatis:
-   config-location: classpath:mybatis/configuration.xml
+
 eureka:
    instance:
       preferIpAddress: true
