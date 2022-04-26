@@ -1,0 +1,39 @@
+#
+# production configuration
+#
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+
+spring:
+   datasource:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://34.64.199.56:5432/poscoict?characterEncoding=UTF-8&serverTimezone=UTC
+      username: poscoict
+      password: 1234
+
+eureka:
+   instance:
+      preferIpAddress: true
+   client:
+      fetchRegistry: true
+      registerWithEureka: true
+      serviceUrl:
+         defaultZone: http://34.64.199.56:8762/eureka
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+      me:
+         kickscar:
+            msa:
+               service:
+                  guestbook:
+                     exception: ERROR
